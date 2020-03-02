@@ -28,6 +28,7 @@ async def donwload_aio(urls):
 def updatedoc(doc, links):
     var = json.dumps(links, indent=4)
     linksjson = json.loads(var)
+    print("update: " + str(linksjson))
     mycol.update_one(doc, {"$push": linksjson })
 
 
